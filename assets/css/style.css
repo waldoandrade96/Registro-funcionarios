@@ -1,0 +1,648 @@
+/* =============================================
+   Cadastro de Funcionários — Stylesheet
+   ============================================= */
+
+:root {
+    --blue-dark:   #2c4a8a;
+    --blue-main:   #3a63b8;
+    --blue-light:  #4a7dd4;
+    --blue-bg:     #dce8f8;
+    --gray-bg:     #e8eaed;
+    --gray-border: #cfd3d8;
+    --gray-input:  #f5f6f8;
+    --gray-text:   #5a6474;
+    --white:       #ffffff;
+    --green:       #2ecc71;
+    --red:         #e74c3c;
+    --orange:      #f39c12;
+    --text-dark:   #1e2a3a;
+    --shadow-sm:   0 2px 8px rgba(44,74,138,.10);
+    --shadow-md:   0 4px 20px rgba(44,74,138,.15);
+    --radius:      6px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    background: var(--gray-bg);
+    color: var(--text-dark);
+    min-height: 100vh;
+}
+
+a {
+    color: var(--blue-main);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =============================================
+   LOGIN PAGE
+   ============================================= */
+
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: var(--gray-bg);
+}
+
+.login-card {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+    padding: 48px 52px 40px;
+    width: 100%;
+    max-width: 480px;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.login-header .icon {
+    font-size: 52px;
+    color: var(--blue-dark);
+    margin-bottom: 10px;
+}
+
+.login-header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--blue-dark);
+}
+
+.form-group {
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.input-icon {
+    position: relative;
+}
+
+.input-icon i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9aa3b0;
+    font-size: 16px;
+}
+
+.input-icon input {
+    width: 100%;
+    padding: 12px 14px 12px 44px;
+    border: 1px solid var(--gray-border);
+    border-radius: var(--radius);
+    background: var(--gray-input);
+    font-size: 14px;
+    color: var(--text-dark);
+    transition: border-color .2s, box-shadow .2s;
+    outline: none;
+}
+
+.input-icon input:focus {
+    border-color: var(--blue-main);
+    box-shadow: 0 0 0 3px rgba(58,99,184,.12);
+    background: var(--white);
+}
+
+.input-icon input::placeholder {
+    color: #aab2be;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s, transform .1s;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn:hover {
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--blue-main);
+    color: var(--white);
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background: var(--blue-dark);
+}
+
+.btn-primary:active {
+    transform: scale(.98);
+}
+
+.btn-secondary {
+    background: #e8eaed;
+    color: var(--gray-text);
+}
+
+.btn-secondary:hover {
+    background: #d5d8de;
+}
+
+.btn-success {
+    background: var(--blue-main);
+    color: var(--white);
+}
+
+.btn-success:hover {
+    background: var(--blue-dark);
+}
+
+.login-divider {
+    border: none;
+    border-top: 1px solid var(--gray-border);
+    margin: 24px 0 20px;
+}
+
+.login-links {
+    text-align: center;
+}
+
+.login-links a {
+    color: var(--blue-main);
+    font-size: 13px;
+}
+
+.alert {
+    padding: 10px 14px;
+    border-radius: var(--radius);
+    margin-bottom: 16px;
+    font-size: 13px;
+}
+
+.alert-danger {
+    background: #fdecea;
+    color: #c0392b;
+    border: 1px solid #f5c6c2;
+}
+
+.alert-success {
+    background: #eafaf1;
+    color: #1e8449;
+    border: 1px solid #a9dfbf;
+}
+
+/* =============================================
+   NAVBAR
+   ============================================= */
+
+.navbar {
+    background: var(--blue-dark);
+    color: var(--white);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    height: 52px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--white);
+    margin-right: 32px;
+}
+
+.navbar-brand i {
+    font-size: 20px;
+    opacity: .85;
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 4px;
+    flex: 1;
+}
+
+.nav-link {
+    color: rgba(255,255,255,.75);
+    padding: 6px 14px;
+    border-radius: var(--radius);
+    font-size: 13.5px;
+    font-weight: 500;
+    transition: background .15s, color .15s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: rgba(255,255,255,.12);
+    color: var(--white);
+    text-decoration: none;
+}
+
+.nav-link.active {
+    border-bottom: 2px solid var(--white);
+    border-radius: 0;
+    padding-bottom: 4px;
+}
+
+.navbar-user {
+    position: relative;
+}
+
+.user-menu-btn {
+    background: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13.5px;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: var(--radius);
+}
+
+.user-menu-btn:hover {
+    background: rgba(255,255,255,.12);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 6px);
+    background: var(--white);
+    border: 1px solid var(--gray-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    min-width: 150px;
+    z-index: 200;
+}
+
+.dropdown-menu.open {
+    display: block;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 10px 16px;
+    color: var(--text-dark);
+    font-size: 13px;
+    transition: background .15s;
+}
+
+.dropdown-item:hover {
+    background: var(--gray-bg);
+    text-decoration: none;
+}
+
+/* =============================================
+   MAIN LAYOUT
+   ============================================= */
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.page-content {
+    padding: 28px 20px;
+}
+
+.page-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 22px;
+}
+
+/* =============================================
+   CARD
+   ============================================= */
+
+.card {
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.card-header {
+    background: var(--blue-bg);
+    border-bottom: 1px solid var(--gray-border);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 14.5px;
+    color: var(--blue-dark);
+}
+
+.card-header i {
+    font-size: 18px;
+    opacity: .8;
+}
+
+.card-body {
+    padding: 24px 20px;
+}
+
+/* =============================================
+   FORM
+   ============================================= */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--gray-text);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid var(--gray-border);
+    border-radius: var(--radius);
+    font-size: 13.5px;
+    color: var(--text-dark);
+    background: var(--gray-input);
+    transition: border-color .2s, box-shadow .2s;
+    outline: none;
+}
+
+.form-control:focus {
+    border-color: var(--blue-main);
+    box-shadow: 0 0 0 3px rgba(58,99,184,.10);
+    background: var(--white);
+}
+
+.form-control::placeholder {
+    color: #b0b7c0;
+}
+
+.form-control[disabled],
+.form-control.readonly {
+    background: #f0f2f4;
+    color: #8a929e;
+    cursor: not-allowed;
+}
+
+select.form-control {
+    cursor: pointer;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 9px 0;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13.5px;
+    font-weight: 400;
+    color: var(--text-dark);
+    cursor: pointer;
+    text-transform: none;
+    letter-spacing: 0;
+    margin: 0;
+}
+
+.radio-group input[type="radio"] {
+    accent-color: var(--blue-main);
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--gray-border);
+}
+
+/* =============================================
+   TABLE
+   ============================================= */
+
+.table-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    gap: 12px;
+}
+
+.search-box {
+    position: relative;
+    flex: 1;
+    max-width: 320px;
+}
+
+.search-box i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9aa3b0;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 8px 12px 8px 36px;
+    border: 1px solid var(--gray-border);
+    border-radius: var(--radius);
+    font-size: 13px;
+    outline: none;
+    background: var(--gray-input);
+    transition: border-color .2s;
+}
+
+.search-box input:focus {
+    border-color: var(--blue-main);
+    background: var(--white);
+}
+
+.table-actions-right {
+    display: flex;
+    gap: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    background: var(--blue-dark);
+    color: var(--white);
+    padding: 11px 14px;
+    text-align: left;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: .4px;
+    text-transform: uppercase;
+}
+
+thead th:first-child {
+    border-radius: 6px 0 0 0;
+}
+
+thead th:last-child {
+    border-radius: 0 6px 0 0;
+}
+
+tbody tr {
+    border-bottom: 1px solid #edf0f4;
+    transition: background .12s;
+}
+
+tbody tr:hover {
+    background: #f4f7fc;
+}
+
+tbody td {
+    padding: 11px 14px;
+    font-size: 13.5px;
+    color: var(--text-dark);
+}
+
+tbody td a {
+    color: var(--blue-main);
+    font-weight: 500;
+}
+
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11.5px;
+    font-weight: 600;
+}
+
+.badge-ativo {
+    background: #d4f4e2;
+    color: #1a7a42;
+}
+
+.badge-inativo {
+    background: #fde8e8;
+    color: #b03030;
+}
+
+.action-btns {
+    display: flex;
+    gap: 4px;
+}
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    transition: opacity .15s, transform .1s;
+    text-decoration: none;
+}
+
+.btn-icon:hover {
+    opacity: .8;
+    transform: scale(1.08);
+    text-decoration: none;
+}
+
+.btn-edit   { background: var(--blue-main); color: var(--white); }
+.btn-email  { background: #e67e22;          color: var(--white); }
+.btn-delete { background: var(--red);        color: var(--white); }
+
+/* =============================================
+   PAGINATION
+   ============================================= */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #edf0f4;
+}
+
+.page-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    border: 1px solid var(--gray-border);
+    border-radius: var(--radius);
+    color: var(--blue-main);
+    font-size: 13px;
+    font-weight: 500;
+    transition: background .15s, color .15s;
+    text-decoration: none;
+}
+
+.page-link:hover {
+    background: var(--blue-bg);
+    text-decoration: none;
+}
+
+.page-link.active {
+    background: var(--blue-main);
+    color: var(--white);
+    border-color: var(--blue-main);
+}
+
+/* =============================================
+   UTILITIES
+   ============================================= */
+
+.text-muted  { color: #8a929e; }
+.text-small  { font-size: 12px; }
+.mt-8        { margin-top: 8px; }
+.hidden      { display: none; }

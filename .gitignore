@@ -1,0 +1,15 @@
+# Configurações sensíveis
+includes/db.php
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+error_log
+
+# IDEs
+.vscode/
+.idea/
+*.swp
